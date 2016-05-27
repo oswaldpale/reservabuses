@@ -176,12 +176,19 @@ public class VisualPersonaFormulario extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        persona.AgregarPersona(cedula.getText(), nombre.getText(), apellido.getText(), telefono.getText(), email.getText(), targeta.getText());
-        JOptionPane.showMessageDialog(null, "Felicitaciones "+nombre.getText()+" su reserva ha sido exitosa\n"
+        
+        if(persona.AgregarPersona(cedula.getText(), nombre.getText(), apellido.getText(), telefono.getText(), email.getText(), targeta.getText()))
+        {
+            JOptionPane.showMessageDialog(null, "Felicitaciones "+nombre.getText()+" su reserva ha sido exitosa\n"
                     + "hemos enviado el Tiquete a "+email.getText()+" en donde encontrara mas informacion al respecto\n\n"
                     + "su viaje: \n\n"
                     +vi.mostrarDatos);        
-        System.exit(0);
+            System.exit(0);
+        }else{
+            JOptionPane.showMessageDialog(null, "Datos Invalidos o incompletos. "  + "\n\n" ); 
+        }
+        
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

@@ -1,23 +1,22 @@
 package controller;
 
+import java.sql.ResultSet;
+import model.PersonaDao;
+
 
 public class Persona {
-    private String idCedula;
-    private String nombre;
-    private String apellido;
-    private String email;
-    private String targeta;
-    private String telefono;
-
-    public void AgregarPersona(String idCedula, String nombre, String apellido, String telefono, String email, String targeta) {
-        this.idCedula = idCedula;
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.telefono = telefono;        
-        this.email = email;
-        this.targeta = targeta;
-        
+    
+    private PersonaDao particular = new PersonaDao();
+    public boolean AgregarPersona(String idCedula, String nombre, String apellido, String telefono, String email, String tarjeta) {
+       return particular.agregarPersona(idCedula, nombre, apellido, telefono, email, tarjeta);
     }
+    public boolean modificarPersona(String idCedula, String nombre, String apellido, String telefono, String email, String tarjeta){
+       return particular.modificarPersona(idCedula, nombre, apellido, telefono, email, tarjeta);
+    }
+    public ResultSet consultarPersona(String idCedula){
+       return particular.consultarPersona(idCedula);
+    }
+
 
     
     
