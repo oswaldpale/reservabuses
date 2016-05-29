@@ -6,8 +6,11 @@
 
 package view.publico;
 
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.HashMap;
 import javax.swing.JOptionPane;
-import view.privado.Menu;
+import model.UsuarioDao;
 
 /**
  *
@@ -18,6 +21,7 @@ public class login extends javax.swing.JFrame {
     /**
      * Creates new form Menuprincipal
      */
+    UsuarioDao _usuario = new UsuarioDao();
     public login() {
         initComponents();
     }
@@ -143,17 +147,20 @@ public class login extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+       
         if(this.txtusuario.getText().length()==0){
             JOptionPane.showMessageDialog(this,"No a Indicado el Usuario","Campo vacio",1);
         }else{
-            String[] usuario = new String[20];
-            String[] contra = new String[20];
-            usuario[0]="admin1";
-            usuario[1]="uriel";
-            contra[1]="contra";
-            contra[0]="contraseña";
-            if(this.txtusuario.getText().toString().equals(usuario[1])){
-                if(this.txtcontra.getText().equals(contra[1])){
+            
+            String login = this.txtusuario.getText().trim();
+            String tcontrasena = this.txtcontra.getText().trim();
+            ArrayList table = _usuario.consultarUsuario(login);
+            
+            if(table.size()> 0){
+                Object[] row = table.toArray();
+                HashMap column = (HashMap) row[0];
+                String contrasena =(String) column.get("CONTRASENA");
+                if(tcontrasena.equals(contrasena)){
                     new Menu().setVisible(true);
                     this.dispose();
                 }else{
@@ -161,8 +168,7 @@ public class login extends javax.swing.JFrame {
                 }
             }else{
                 JOptionPane.showMessageDialog(this,"Usuario incorrecto","Error",0);
-            }
-            
+            }    
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 

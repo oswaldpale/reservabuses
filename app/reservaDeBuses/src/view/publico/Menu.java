@@ -4,11 +4,12 @@
  * and open the template in the editor.
  */
 
-package view.privado;
+package view.publico;
 
 import view.publico.login;
 import java.sql.Connection;
 import java.util.Locale;
+import view.publico.login;
 
 /**
  *
@@ -93,7 +94,7 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ventana.jpg"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ventana.jpg"))); // NOI18N
 
         breportes.setText("Reportes");
         breportes.addActionListener(new java.awt.event.ActionListener() {

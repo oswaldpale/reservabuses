@@ -1,6 +1,7 @@
 package controller;
 
 import java.sql.ResultSet;
+import java.util.ArrayList;
 import model.PersonaDao;
 
 
@@ -13,7 +14,7 @@ public class Persona {
     public boolean modificarPersona(String idCedula, String nombre, String apellido, String telefono, String email, String tarjeta){
        return particular.modificarPersona(idCedula, nombre, apellido, telefono, email, tarjeta);
     }
-    public ResultSet consultarPersona(String idCedula){
+    public ArrayList consultarPersona(String idCedula){
        return particular.consultarPersona(idCedula);
     }
 

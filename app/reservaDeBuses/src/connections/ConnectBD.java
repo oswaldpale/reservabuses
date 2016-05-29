@@ -12,8 +12,11 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Properties;
@@ -32,7 +35,7 @@ public class ConnectBD {
         prop.load(reader);
         String user = prop.getProperty("user");
         String password = prop.getProperty("pasword");
-        String connect = "jdbc:mysql://localhost/reserva?" + "user=" + user + "&password=" + password + "";
+        String connect = "jdbc:mysql://localhost:3306/reserva?" + "user=" + user + "&password=" + password + "";
         return connect;
     }
 
@@ -40,39 +43,36 @@ public class ConnectBD {
         Connection conn = null;
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            conn = DriverManager.getConnection(getConnectionString());
+            String cadenaBD = getConnectionString();
+            conn = DriverManager.getConnection(cadenaBD);
             return conn;
 
         } catch (SQLException ex) {
             ex.printStackTrace();
-            return conn;
-        } finally {
-            if (conn != null) {
-                try {
-                    conn.close();
-                } catch (SQLException ex) {
-                    ex.printStackTrace();
-                }
-            }
-        }
+        } 
+        return null;
     }
 
    // <editor-fold defaultstate="collapsed" desc="Methods database">
-    public ResultSet getData(String sql) {
+    public ArrayList getData(String sql) {
         ResultSet resultSet = null;
         PreparedStatement preparedStatement = null;
         try {
             Connection conn = Open();
             preparedStatement = conn.prepareStatement(sql);
             resultSet = preparedStatement.executeQuery();
+             ArrayList list =  resultSetToArrayList(resultSet);
             resultSet.close();
             preparedStatement.close();
-            conn.close();
-            return resultSet;
+             conn.close();
+           
+           
+            return list;
         } catch (Exception exc) {
-            return resultSet;
+            return null;
         }
     }
+
     public boolean sendSetData(String sql) {
         Statement st;
         try {
@@ -129,6 +129,23 @@ public class ConnectBD {
         return false;
     }
 
-    // </editor-fold>
+   
 
+    // <editor-fold defaultstate="collapsed" desc="Convert Resultset a ArrayList"> 
+    public ArrayList resultSetToArrayList(ResultSet rs) throws SQLException {
+        ResultSetMetaData md = rs.getMetaData();
+        int columns = md.getColumnCount();
+        ArrayList results = new ArrayList();
+
+        while (rs.next()) {
+            HashMap row = new HashMap();
+            results.add(row);
+
+            for (int i = 1; i <= columns; i++) {
+                row.put(md.getColumnName(i), rs.getObject(i));
+            }
+        }
+        return results;
+    }
+    // </editor-fold>
 }
