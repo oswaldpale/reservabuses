@@ -177,7 +177,7 @@ public class VisualPersonaFormulario extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         
-        if(persona.AgregarPersona(cedula.getText(), nombre.getText(), apellido.getText(), telefono.getText(), email.getText(), targeta.getText()))
+        if(persona.AgregarPersona(cedula.getText(), nombre.getText(), apellido.getText(), telefono.getText(), email.getText()))
         {
             JOptionPane.showMessageDialog(null, "Felicitaciones "+nombre.getText()+" su reserva ha sido exitosa\n"
                     + "hemos enviado el Tiquete a "+email.getText()+" en donde encontrara mas informacion al respecto\n\n"

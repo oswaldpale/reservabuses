@@ -8,14 +8,15 @@ package model;
 import connections.ConnectBD;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+
 /**
  *
  * @author Usuario TI
  */
-public class PersonaDao {
+public class ViajeDao {
     private  ConnectBD _connection = new ConnectBD();
     
-     public boolean agregarPersona(String idCedula, String nombre, String apellido, String telefono, String email) {
+     public boolean agregarHorario(String idCedula, String nombre, String apellido, String telefono, String email, String tarjeta) {
          String sql = "INSERT "
                         + "INTO "
                         + "    persona "
@@ -33,12 +34,12 @@ public class PersonaDao {
                         + "        '" + nombre   + "', "
                         + "        '" + apellido + "', "
                         + "        '" + telefono + "', "
-                        + "        '" + email    + "' "
-                      
+                        + "        '" + email    + "', "
+                        + "        '" + tarjeta  + "' "
                         + "    )";
         return _connection.sendSetData(sql);
     }
-    public ArrayList consultarPersona(String cedula) {
+    public ArrayList consultarHorario(String cedula) {
         String sql = "SELECT "
                         + "    NOMBRE, "
                         + "    APELLIDO, "
@@ -51,7 +52,7 @@ public class PersonaDao {
         return _connection.getData(sql);
     }
     
-   public boolean modificarPersona(String idCedula, String nombre, String apellido, String telefono, String email, String tarjeta){
+   public boolean modificarHorario(String idCedula, String nombre, String apellido, String telefono, String email, String tarjeta){
        String sql = "UPDATE "
                         + "    persona "
                         + "SET "
@@ -64,5 +65,4 @@ public class PersonaDao {
                         + "    CEDULA = '" + idCedula + "'";
        return _connection.sendSetData(sql);
    }
- 
 }

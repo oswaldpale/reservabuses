@@ -4,6 +4,7 @@ package controller;
 import java.util.Random;
 
 public class Bus {
+    
     public String placa= "";
     public String marca= "";
     public String modelo= "";
@@ -15,7 +16,7 @@ public class Bus {
     public boolean disponibilidad = true;
     public int capacidad = 30;
     public double precio[]={30.000, 40.000, 50.000, 35.900, 42.000, 48.000, 32.000};
-    public Asiento silla = new Asiento();
+    public AsientoTiquete silla = new AsientoTiquete();
     
     public String ConsultarBus(String FechaSalida, int CantidadPasajero){
         Random ran = new Random();        
@@ -29,6 +30,9 @@ public class Bus {
         int aleatorioHorario = ran.nextInt(horario.length);
         return "Hora: "+horario[aleatorioHorario];
     }
+    
+    
+    
     
     
 }

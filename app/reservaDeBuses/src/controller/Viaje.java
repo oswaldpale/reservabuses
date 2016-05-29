@@ -1,7 +1,12 @@
 package controller;
 
+import java.util.ArrayList;
+import model.CiudadesDao;
+
 public class Viaje {
 
+    CiudadesDao ciudad = new CiudadesDao();
+    
     int num = 0;
     private String ciudadOrigen;
     private String ciudadDestino;
@@ -30,5 +35,9 @@ public class Viaje {
     public String ConsultarViaje(String fecha, int cantidadPasajeros) {
         String mostrar = bus.ConsultarBus(fecha, cantidadPasajeros);
         return mostrar;
+    }
+    
+    public ArrayList ConsultarCiudades(){
+        return ciudad.consultarCiudadees();
     }
 }

@@ -11,14 +11,7 @@ public class Tiquete extends javax.swing.JFrame {
         initComponents();
         for (int i = 0; i < 30; i++) {
             CantidadPasajeros.addItem(i+1);
-            
         }
-        for (String ciudade : viaje.ciudades) {
-            ComboOrigen.addItem(ciudade);
-            comboDestino.addItem(ciudade);
-        }
-        setDefaultCloseOperation(3);
-        setLocationRelativeTo(null);
     }
 
     

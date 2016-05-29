@@ -3,11 +3,10 @@ package controller;
 
 import javax.swing.JOptionPane;
 
-public class Asiento {
+public class AsientoTiquete {
     int idAsiento = 1;
     boolean estado[] = {true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true,
                         true, true, true, true, true, true, true, true, true, true, true, true, true, true};
-    
     
     public boolean Consultar(int idAsiento) {
         return estado[idAsiento];
