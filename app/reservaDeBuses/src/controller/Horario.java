@@ -5,10 +5,17 @@
  */
 package controller;
 
+import java.util.ArrayList;
+import model.HorarioDao;
+
+
 /**
  *
  * @author Usuario TI
  */
 public class Horario {
-    
+    private HorarioDao particular = new HorarioDao();
+     public ArrayList consultarHorario(){
+       return particular.consultarHorario();
+    }
 }
