@@ -2,24 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="1"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/Users/Usuario%20TI/Documents/Proyecto/Reserva/ReservaBuses/app/reservaDeBuses/src/model/UsuarioDao.java</file>
-            <file>file:/C:/Users/Usuario%20TI/Documents/Proyecto/Reserva/ReservaBuses/app/reservaDeBuses/src/model/BusDao.java</file>
-            <file>file:/C:/Users/Usuario%20TI/Documents/Proyecto/Reserva/ReservaBuses/app/reservaDeBuses/src/view/publico/Menu.java</file>
-            <file>file:/C:/Users/Usuario%20TI/Documents/Proyecto/Reserva/ReservaBuses/app/reservaDeBuses/src/controller/Horario.java</file>
-            <file>file:/C:/Users/Usuario%20TI/Documents/Proyecto/Reserva/ReservaBuses/app/reservaDeBuses/src/view/privado/content/VisualPersonaFormulario.java</file>
-            <file>file:/C:/Users/Usuario%20TI/Documents/Proyecto/Reserva/ReservaBuses/app/reservaDeBuses/src/view/privado/content/Tiquete.java</file>
-            <file>file:/C:/Users/Usuario%20TI/Documents/Proyecto/Reserva/ReservaBuses/app/reservaDeBuses/src/view/privado/content/VisualBusquedaDeViajes.java</file>
-            <file>file:/C:/Users/Usuario%20TI/Documents/Proyecto/Reserva/ReservaBuses/app/reservaDeBuses/src/controller/Viaje.java</file>
-            <file>file:/C:/Users/Usuario%20TI/Documents/Proyecto/Reserva/ReservaBuses/app/reservaDeBuses/src/controller/Bus.java</file>
-            <file>file:/C:/Users/Usuario%20TI/Documents/Proyecto/Reserva/ReservaBuses/app/reservaDeBuses/src/view/privado/content/VisualSillas.java</file>
-            <file>file:/C:/Users/Usuario%20TI/Documents/Proyecto/Reserva/ReservaBuses/app/reservaDeBuses/src/model/PersonaDao.java</file>
-            <file>file:/C:/Users/Usuario%20TI/Documents/Proyecto/Reserva/ReservaBuses/app/reservaDeBuses/src/connections/ConnectBD.java</file>
-            <file>file:/C:/Users/Usuario%20TI/Documents/Proyecto/Reserva/ReservaBuses/app/reservaDeBuses/src/model/CiudadesDao.java</file>
-            <file>file:/C:/Users/Usuario%20TI/Documents/Proyecto/Reserva/ReservaBuses/app/reservaDeBuses/src/view/publico/login.java</file>
-            <file>file:/C:/Users/Usuario%20TI/Documents/Proyecto/Reserva/ReservaBuses/app/reservaDeBuses/src/controller/AsientoTiquete.java</file>
-            <file>file:/C:/Users/Usuario%20TI/Documents/Proyecto/Reserva/ReservaBuses/app/reservaDeBuses/src/controller/Persona.java</file>
-            <file>file:/C:/Users/Usuario%20TI/Documents/Proyecto/Reserva/ReservaBuses/app/reservaDeBuses/src/model/ViajeDao.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>
