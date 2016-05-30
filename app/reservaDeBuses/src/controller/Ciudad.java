@@ -5,10 +5,13 @@
  */
 package controller;
 
-/**
- *
- * @author JULIO
- */
+import java.util.ArrayList;
+import model.CiudadDao;
+
+
 public class Ciudad {
-    
+    private CiudadDao particular = new CiudadDao();
+     public ArrayList consultarCiudad(){
+       return particular.consultarCiudad();
+    }
 }

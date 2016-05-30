@@ -16,14 +16,16 @@ import java.util.ArrayList;
 public class UsuarioDao {
     private  ConnectBD _connection = new ConnectBD();
     public ArrayList consultarUsuario(String login){
-    String sql = "SELECT "
+    String sql =  "SELECT "
+                    + "    IDUSUARIO, "
                     + "    NOMBRE, "
+                    + "    ESTADO, "
                     + "    APELLIDOS, "
+                    + "    TELEFONO, "
+                    + "    LOGIN, "
                     + "    CONTRASENA "
                     + "FROM "
-                    + "    usuario "
-                    + "WHERE LOGIN='" + login + "'";
-    
+                    + "    usuario";
         return _connection.getData(sql);
     }
 }

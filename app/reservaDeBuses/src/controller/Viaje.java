@@ -1,43 +1,18 @@
 package controller;
 
 import java.util.ArrayList;
-import model.CiudadesDao;
+import model.ViajeDao;
+
 
 public class Viaje {
 
-    CiudadesDao ciudad = new CiudadesDao();
-    
-    int num = 0;
-    private String ciudadOrigen;
-    private String ciudadDestino;
-    private String fecha;
-    private String hora;
-    public String ciudades[] = {"Amazonas", "Bogota", "Cali", "Medellin", "Barranquilla", "Pasto", "Florencia", "Neiva",
-                        "Armenia", "Cucuta", "Ibague", "Pereira", "Choco"};
-    public Bus bus = new Bus();
-
-    public void AgregarViaje(int num, String ciudadOrigen, String ciudadDestino, String fecha, String hora) {
-        this.num = num;
-        this.ciudadOrigen = ciudadOrigen;
-        this.ciudadDestino = ciudadDestino;
-        this.fecha = fecha;
-        this.hora = hora;
-        num++;
+  
+   private ViajeDao particular = new ViajeDao();
+    public boolean AgregarViaje(String idviaje, String fecha, String idreserva, String ciudadorigen, String ciudaddestino, String precio) {
+       return particular.agregarViaje(idviaje,  fecha,  idreserva,  ciudadorigen,  ciudaddestino,  precio);
     }
-
-    public void ModificarViaje(String ciudadOrigen, String ciudadDestino, String fecha, String hora) {
-        this.ciudadOrigen = ciudadOrigen;
-        this.ciudadDestino = ciudadDestino;
-        this.fecha = fecha;
-        this.hora = hora;
-    }
-
-    public String ConsultarViaje(String fecha, int cantidadPasajeros) {
-        String mostrar = bus.ConsultarBus(fecha, cantidadPasajeros);
-        return mostrar;
-    }
-    
-    public ArrayList ConsultarCiudades(){
-        return ciudad.consultarCiudadees();
+ 
+    public ArrayList consultarViaje(String idviaje, String fecha, String idreserva, String ciudadorigen, String ciudaddestino, String precio){
+       return particular.consultarViaje(idviaje,  fecha,  idreserva,  ciudadorigen,  ciudaddestino,  precio);
     }
 }

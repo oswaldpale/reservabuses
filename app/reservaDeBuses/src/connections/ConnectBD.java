@@ -35,7 +35,7 @@ public class ConnectBD {
         prop.load(reader);
         String user = prop.getProperty("user");
         String password = prop.getProperty("pasword");
-        String connect = "jdbc:mysql://127.0.0.1:3306/reserva?" + "user=" + user + "&password=" + password + "";
+        String connect = "jdbc:mysql://192.168.1.6:3306/reserva?" + "user=" + user + "&password=" + password + "";
         return connect;
     }
 

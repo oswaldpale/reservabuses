@@ -12,9 +12,9 @@ import java.util.ArrayList;
  *
  * @author Usuario TI
  */
-public class CiudadesDao {
+public class CiudadDao {
     private  ConnectBD _connection = new ConnectBD();
-    public ArrayList consultarCiudadees(){
+    public ArrayList consultarCiudad(){
         String sql = "SELECT "
                         + "    IDCIUDAD, "
                         + "    CIUDAD "

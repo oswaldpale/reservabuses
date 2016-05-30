@@ -16,53 +16,41 @@ import java.util.ArrayList;
 public class ViajeDao {
     private  ConnectBD _connection = new ConnectBD();
     
-     public boolean agregarHorario(String idCedula, String nombre, String apellido, String telefono, String email, String tarjeta) {
-         String sql = "INSERT "
-                        + "INTO "
-                        + "    persona "
-                        + "    ( "
-                        + "        CEDULA, "
-                        + "        NOMBRE, "
-                        + "        APELLIDO, "
-                        + "        TELEFONO, "
-                        + "        IMAIL, "
-                        + "        TARJETA "
-                        + "    ) "
-                        + "    VALUES "
-                        + "    ( "
-                        + "        '" + idCedula + "', "
-                        + "        '" + nombre   + "', "
-                        + "        '" + apellido + "', "
-                        + "        '" + telefono + "', "
-                        + "        '" + email    + "', "
-                        + "        '" + tarjeta  + "' "
-                        + "    )";
+     public boolean agregarViaje(String idViaje, String fecha, String idreserva, String idciudadorigen, String idciudaddestino, String precio) {
+         String sql =  "INSERT "
+                            + "INTO "
+                            + "    viaje "
+                            + "    ( "
+                            + "        IDVIAJE, "
+                            + "        FECHA, "
+                            + "        IDRESERVA, "
+                            + "        IDCIUDADORIGEN, "
+                            + "        IDCIUDADDESTINO, "
+                            + "        PRECIO "
+                            + "    ) "
+                            + "    VALUES "
+                            + "    ( "
+                            + "        0, "
+                            + "        '', "
+                            + "        0, "
+                            + "        0, "
+                            + "        0, "
+                            + "        0 "
+                            + "    )";
         return _connection.sendSetData(sql);
     }
-    public ArrayList consultarHorario(String cedula) {
+    public ArrayList consultarViaje(String idviaje, String fecha, String idreserva, String ciudadorigen, String ciudaddestino, String precio) {
         String sql = "SELECT "
-                        + "    NOMBRE, "
-                        + "    APELLIDO, "
-                        + "    TELEFONO, "
-                        + "    IMAIL, "
-                        + "    TARJETA "
+                        + "    IDVIAJE, "
+                        + "    FECHA, "
+                        + "    IDRESERVA, "
+                        + "    IDCIUDADORIGEN, "
+                        + "    IDCIUDADDESTINO, "
+                        + "    PRECIO "
                         + "FROM "
-                        + "    persona "
-                        + "WHERE  CEDULA='" + cedula + "'";
+                        + "    viaje";
         return _connection.getData(sql);
     }
     
-   public boolean modificarHorario(String idCedula, String nombre, String apellido, String telefono, String email, String tarjeta){
-       String sql = "UPDATE "
-                        + "    persona "
-                        + "SET "
-                        + "    NOMBRE = '"   + nombre + "', "
-                        + "    APELLIDO = '" + apellido + "', "
-                        + "    TELEFONO = '" + telefono +  "', "
-                        + "    IMAIL = '"    + email + "', "
-                        + "    TARJETA = ' " + tarjeta +  "' "
-                        + "WHERE "
-                        + "    CEDULA = '" + idCedula + "'";
-       return _connection.sendSetData(sql);
-   }
+
 }
